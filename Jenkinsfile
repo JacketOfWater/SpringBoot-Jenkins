@@ -31,14 +31,14 @@ pipeline {
 		stage('Build Docker Image'){
 			steps{
 			sh '''
-			docker build -t jacketofwater/springdemo:latest .
+			docker build -t zebra779/springdemo:latest .
 			'''
 			}
         }
 		stage('Push Docker Image'){
 			steps{
 			sh '''
-			docker push jacketofwater/springdemo:latest
+			docker push zebra779/springdemo:latest
 			'''
 			}
         }
@@ -65,12 +65,12 @@ pipeline {
 					if ("${GIT_BRANCH}" == 'origin/main') {
 						sh '''
 						ssh -i "~/.ssh/id_rsa" jenkins@34.163.242.237 << EOF
-						docker run -d -p 8080:8080 --name javabuild jacketofwater/springdemo:latest
+						docker run -d -p 8080:8080 --name javabuild zebra779/springdemo:latest
 						'''
 					} else if ("${GIT_BRANCH}" == 'origin/development') {
 						sh '''
 						ssh -i "~/.ssh/id_rsa" jenkins@34.79.179.51 << EOF
-						docker run -d -p 8080:8080 --name javabuild jacketofwater/springdemo:latest
+						docker run -d -p 8080:8080 --name javabuild zebra779/springdemo:latest
 						'''
 					}
 				}
