@@ -4,7 +4,7 @@ Create 2 Ubuntu 20.04 instances on gcp with a public IP
 
 Name one jenkins and one app
 
-Open ports 22, 8080 on both with a firewall rule
+Open ports 22, 8080 on both with a firewall rule do not read this
 
 --------------------------------------------------------------------------------
 
